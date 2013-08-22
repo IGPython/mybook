@@ -13,5 +13,14 @@
  */
 
 body {
-	padding-top: 40px;
+	padding-top: 54px;
 }
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+
