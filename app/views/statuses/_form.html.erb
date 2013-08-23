@@ -1,20 +1,34 @@
-<%= simple_form_for(@status, html: {class: "form-horizontal"}) do |f| %>
-  <% if @status.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@status.errors.count, "error") %> prohibited this status from being saved:</h2>
 
-      <ul>
-      <% @status.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= f.input :user_id, collection: User.all, label_method: :full_name %>
-  <%= f.input :content %>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+<div class="row">
+  <div class="col-md-12">
+  <%= simple_form_for(@status, html: {class: "form-horizontal"}) do |f| %>
+    <% if @status.errors.any? %>
+        <div class="alert alert-danger alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <h2><%= pluralize(@status.errors.count, "error") %> prohibited this status from being posted:</h2>
+          <ul>
+            <% @status.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-1"
+    <%= f.input :user_id, collection: User.all, label_method: :full_name %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-9 col-md-offset-2 post">
+    <%= f.input_field :content, :as => :text, :placeholder => "Create your post", :cols => "110", :rows =>"5" %>
+    <div class="form-actions">
+      <%= f.submit :submit, :class=>"btn btn-success"%>
+    </div>
+  </div>
+</div>
+
 <% end %>

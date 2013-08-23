@@ -2,9 +2,10 @@
 	<h1>Wall</h1>
 </div>
 
-<%= link_to "Post a New Status", new_status_path, class: "btn btn-success" %>
+<%= link_to "Post your comment", new_status_path, class: "btn btn-success" %>
 
 <% @statuses.each do |status| %>
+
 <div class="status">
 	<strong><%= status.user.full_name %></strong>
 	<p><%= status.content %></p>
@@ -18,8 +19,6 @@
 </div>
 
 <% end %>
-
-
 
 
 <%= link_to 'New Status', new_status_path %>

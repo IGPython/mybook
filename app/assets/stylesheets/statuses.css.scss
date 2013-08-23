@@ -8,7 +8,7 @@
 }
 
 .status p{
-	margin: 4px 0px;
+	margin: 10x 0px;
 }
 .status .admin{
 	display: none;
@@ -17,8 +17,11 @@
 	display: inline;
 }
 .status.hover {
-	background: #FAFAFA;
+	background: #F7F7F7;
 }
 .page-header{
 	margin: 10px 0px 10px;
+}
+.post textarea{
+	margin: 10px 0px;
 }
