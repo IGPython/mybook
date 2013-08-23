@@ -23,12 +23,31 @@ class StatusesControllerTest < ActionController::TestCase
     assert :success
   end
 
-  test "should create status" do
-    assert_difference('Status.count') do
-      post :create, status: { content: @status.content, user_id: @status.user_id}
-    end
+  test "user can sign in" do
+    sign_in users(:testuser)
+    get :new
+    assert :success
+  end
 
-    assert_redirected_to status_path(assigns(:status))
+  test "should be loged in to post a status" do
+    post :create, status: {content: "hello"}
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
+  test "should be logged in to edit a post" do
+    put :update, id: @status, status: { content: @status.content }
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
+
+  test "should create status" do
+    sign_in users(:testuser)
+      assert_difference('Status.count') do
+      post :create, status: { content: @status.content, user_id: @status.user_id}
+      assert_redirected_to status_path(assigns(:status))
+    end
   end
 
   test "should show status" do
@@ -36,12 +55,20 @@ class StatusesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should be logged in to get edit" do
+    sign_in users(:testuser)
     get :edit, id: @status
     assert_response :success
   end
 
+  test "should be redirected if trying to edit and not signed in " do
+    get :edit, id: @status
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
+  end
+
   test "should update status" do
+    sign_in users(:testuser)
     put :update, id: @status, status: { content: @status.content }
     assert_redirected_to status_path(assigns(:status))
   end
