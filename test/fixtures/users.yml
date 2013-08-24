@@ -3,3 +3,10 @@ testuser:
   last_name: "User"
   profile_name: "testprofile"
   email: "example@example.com"
+
+testuser2:
+  first_name: "Test2"
+  last_name: "User2"
+  profile_name: "newprofile"
+  email: "example2@example2.com"
+

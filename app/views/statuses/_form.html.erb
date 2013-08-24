@@ -18,12 +18,12 @@
 
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-1"
+  <div class="col-md-4 col-md-offset-1">
     <%= f.input :user_id, collection: User.all, label_method: :full_name %>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-9 col-md-offset-2 post">
+  <div class="col-md-9 col-md-offset-1 post">
     <%= f.input_field :content, :as => :text, :placeholder => "Create your post", :cols => "110", :rows =>"5" %>
     <div class="form-actions">
       <%= f.submit :submit, :class=>"btn btn-success"%>

@@ -5,4 +5,12 @@ class CustomRoutesTest < ActionDispatch::IntegrationTest
   	get '/signin'
   	assert_response :success
   end
+
+
+ test "that a profile page works" do
+ 	get '/testuser'
+ 	assert_response :success
+ end
+
+
 end
