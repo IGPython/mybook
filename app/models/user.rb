@@ -23,15 +23,15 @@ class User < ActiveRecord::Base
 
   has_many :statuses
   
-  	def full_name
+  def full_name
 		first_name + " " + last_name	
 	end
 
-    def gravitar_image
+  def gravatar_image
       striped_string = email.strip
       downcased_email = striped_string.downcase
       hash = Digest::MD5.hexdigest(downcased_email)
 
       "http://gravatar.com/avatar/#{hash}"
-    end
+  end
 end

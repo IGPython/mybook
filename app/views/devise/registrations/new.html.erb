@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-12">
+  <div class="span12">
     <% if devise_error_messages!.include? " " %>
         <div class="alert alert-danger alert-dismissable">
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>   
@@ -10,16 +10,16 @@
 </div>
 
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="span8">
     <h1>Sign up</h1>
   </div>
 </div>
 
 
 <div clas="row">
-  <div class ="col-md-6 col-md-offset-2 border-form-div">
+  <div class ="span5 border-form-div">
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {class: "well"}) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {class: "well form-horizontal"}) do |f| %>
 
   <%= f.input_field :first_name, :autofocus =>true, :placeholder => "First Name" %>
 
