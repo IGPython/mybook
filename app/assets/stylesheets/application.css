@@ -27,3 +27,7 @@ body {
 .alert{
 	margin-top: 10px;
 }
+
+.navbar-header .brand a {
+	margin-left: 0px;
+}
