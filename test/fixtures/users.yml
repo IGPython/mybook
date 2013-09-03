@@ -10,3 +10,8 @@ testuser2:
   profile_name: "newprofile"
   email: "example2@example2.com"
 
+mikethefrog:
+  first_name: "Mike"
+  last_name: "The Frog"
+  profile_name: "mikethefrog"
+  email: "mike2@frogs.com"
